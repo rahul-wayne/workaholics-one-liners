@@ -1,0 +1,12 @@
+
+find /path/to/folder/ -type l -ls
+
+find symlinks - folder/file
+
+find -L / -samefile file1.txt
+
+find -L / -samefile "file1.txt"
+
+stat file/folder
+
+find -L / -inum 94804

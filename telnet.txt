@@ -1,0 +1,8 @@
+telnet 
+======
+
+mail
+
+CTRL + ]
+
+telnet> close

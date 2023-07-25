@@ -1,0 +1,27 @@
+
+sudo zgrep -a "keyword" /path/to/log.tar.gz 
+
+-a, --text
+treat all files as text
+
+for i in `cat fi_de`; do sudo zgrep -a "$i" /path/to/log.gz >> my_log ; done
+
+5. To get the properties of the compressed file.  
+
+$zcat -l filename.gz
+
+zless filename.gz
+
+zcat log_file.gz | less
+
+gzcat log_file.gz | less
+
+zdiff file1.gz file2.gz
+zcmp file1.gz file2.gz
+
+
+
+
+
+
+

@@ -1,0 +1,3 @@
+awk '{print $NF}' --> last field
+
+awk '{print $1}' --> first field	

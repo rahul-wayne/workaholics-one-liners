@@ -1,0 +1,4 @@
+tr -d '\r' < sample.csv > new_sample.csv
+
+
+tr -d '\r' < BSI_ref.txt > BSI_fol_ref.txt

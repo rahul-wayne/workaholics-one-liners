@@ -1,0 +1,23 @@
+
+TMUX
+====
+
+tmux ls
+tmux new -s mysession
+
+tmux attach-session -t 0
+
+tmux attach-session -t mysession
+
+CTRL + b then d (hold ctrl, press b, let go of both of the keys, and press d)
+
+tmux scroll
+===========
+
+Ctrl+B [
+up / down 
+
+q - to quit scrolling
+
+Press the Ctrl + B keys, then the subsequent “[]” key. To navigate the Tmux interface, use the standard keyboard navigation keys such as up/down arrows, page up/page down, etc.
+

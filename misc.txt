@@ -1,0 +1,12 @@
+Nested loop
+===========
+for i in 0 1 2 3 4 5 6 7 8 9; do for j in 0 1 2 3 4 5 6 7 8 9;do echo "$i$j"; done; done
+
+
+Change Extension
+================
+for f in *.tif; do mv -- "$f" "${f%.tif}.jpg"; done
+
+For filenames with spaces
+=========================
+IFS=$'\n';for i in `ls /folder/path`;do echo $i;done

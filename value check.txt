@@ -1,0 +1,16 @@
+for x in $(cat file2); do grep $x file1; status=$(echo $?); if [ $status -eq 0 ]; then echo $x found; else echo $x not_found ;fi ; done
+
+
+for value in $(cat file2)
+do
+ grep $value file1;
+ status=$(echo $?)
+ if [ $status -eq 0 ]
+ then
+  echo $status
+  echo $value found
+ else
+  echo $status
+  echo $value not_found
+ fi
+done
