@@ -1,0 +1,19 @@
+You need to escape it. Just type \ backslash before every occurrence of %.
+
+The percent character indicates new line in crontab.
+
+https://cronexpressiontogo.com/every-last-sunday
+
+This command checks that next Sunday is in the next month and if it is, the following command is executed.
+
+0 0 * * 0 [[ $(($(date -d "next Sunday" +\%-m)-1)) -eq $(date +\%-m)) ]] && /script/to/execute
+
+https://cronexpressiontogo.com/every-first-sunday
+
+0 0 * * 0 [[ $((($(date +\%-d)-1)/7+1)) -eq 1 ]] && /script/to/execute
+
+This command checks whether your current date is in the first Sunday of the month.
+
+examples
+--------
+https://cronexpressiontogo.com/examples
