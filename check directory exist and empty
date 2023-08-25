@@ -1,0 +1,7 @@
+if [[ -d "$src_dir" && -z "$(ls -A $src_dir)" ]]
+then
+ echo -e "No files at $src_dir or $src_dir not exist\n"
+ echo -e "Exiting....\n"
+else
+ echo "$src_dir exist"
+fi
