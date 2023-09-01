@@ -10,3 +10,9 @@ find -L / -samefile "file1.txt"
 stat file/folder
 
 find -L / -inum 94804
+----------------------
+stat <actual path>
+get inode number
+find -L </-suspected path> -inum 1107571
+or
+find -L / -samefile "actual path"
