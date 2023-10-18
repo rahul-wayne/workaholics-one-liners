@@ -7,6 +7,9 @@ looping with two variables
 while read -r i && read -r j <&3;do echo "i=$i : j=$j"; done < <(ls /tmp/images) 3</tmp/siva/filename
 while read -r i && read -r j <&3;do echo "i=$i : j=$j"; done < /tmp/file1 3</tmp/siva/file2
 
+IFS= prevents leading/trailing whitespace from being trimmed.
+while IFS= read -r i && IFS= read -r j <&3; do echo "i=$i j=$j"; done < file1.txt 3<file2.txt
+
 Change Extension
 ================
 for f in *.tif; do mv -- "$f" "${f%.tif}.jpg"; done
