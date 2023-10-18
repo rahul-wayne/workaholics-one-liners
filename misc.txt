@@ -2,6 +2,10 @@ Nested loop
 ===========
 for i in 0 1 2 3 4 5 6 7 8 9; do for j in 0 1 2 3 4 5 6 7 8 9;do echo "$i$j"; done; done
 
+looping with two variables
+===========
+while read -r i && read -r j <&3;do echo "i=$i : j=$j"; done < <(ls /tmp/images) 3</tmp/siva/filename
+while read -r i && read -r j <&3;do echo "i=$i : j=$j"; done < /tmp/file1 3</tmp/siva/file2
 
 Change Extension
 ================
