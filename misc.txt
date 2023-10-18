@@ -6,8 +6,17 @@ looping with two variables
 ===========
 while read -r i && read -r j <&3;do echo "i=$i : j=$j"; done < <(ls /tmp/images) 3</tmp/siva/filename
 while read -r i && read -r j <&3;do echo "i=$i : j=$j"; done < /tmp/file1 3</tmp/siva/file2
+--
 
 IFS= prevents leading/trailing whitespace from being trimmed.
+read -r i reads a line from file1.txt.
+read -r j <&3 reads a line from file2.txt which is redirected to file descriptor 3 using 3<file2.txt.
+The notation <&3 refers to file descriptor 3
+0 stands for stdin (standard input)
+1 stands for stdout (standard output)
+2 stands for stderr (standard error)
+File descriptors 3 and onwards can be used for other purposes by the program/script.
+
 while IFS= read -r i && IFS= read -r j <&3; do echo "i=$i j=$j"; done < file1.txt 3<file2.txt
 
 Change Extension
