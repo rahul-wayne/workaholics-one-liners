@@ -32,3 +32,10 @@ for f in *.tif; do mv -- "$f" "${f%.tif}.jpg"; done
 For filenames with spaces
 =========================
 IFS=$'\n';for i in `ls /folder/path`;do echo $i;done
+
+To find and remove prefix of files in a directory
+-------------------------------------------------
+eg: web1_testfile_name.txt >> testfile_name.txt
+
+find /tmp/rahul/logs/edi1 -maxdepth 1 -type f -name "*web1_*" > file_list
+for file in `cat file_list` ; do echo mv -v "$file" "${file#web2_}"; done
