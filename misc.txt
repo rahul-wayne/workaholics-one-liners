@@ -39,3 +39,16 @@ eg: web1_testfile_name.txt >> testfile_name.txt
 
 find /tmp/rahul/logs/edi1 -maxdepth 1 -type f -name "*web1_*" > file_list
 for file in `cat file_list` ; do echo mv -v "$file" "${file#web2_}"; done
+
+add comma & remove tailing white space
+===============
+echo hi,|tr -d '\n'
+
+display top 4 processes line by line
+==============
+ps -eo pid,ppid,user,%mem,%cpu,command --sort=-%mem |head -5|grep -v PID| awk 'NR==1'
+ps -eo pid,ppid,user,%mem,%cpu,command --sort=-%mem |head -5|grep -v PID| awk 'NR==2'
+ps -eo pid,ppid,user,%mem,%cpu,command --sort=-%mem |head -5|grep -v PID| awk 'NR==3'
+ps -eo pid,ppid,user,%mem,%cpu,command --sort=-%mem |head -5|grep -v PID| awk 'NR==4'
+
+for (( i=1;i<=4;i++ ));do ps -eo pid,ppid,user,%mem,%cpu,command --sort=-%mem |head -5|grep -v PID| awk NR==$i;done
