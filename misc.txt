@@ -52,3 +52,11 @@ ps -eo pid,ppid,user,%mem,%cpu,command --sort=-%mem |head -5|grep -v PID| awk 'N
 ps -eo pid,ppid,user,%mem,%cpu,command --sort=-%mem |head -5|grep -v PID| awk 'NR==4'
 
 for (( i=1;i<=4;i++ ));do ps -eo pid,ppid,user,%mem,%cpu,command --sort=-%mem |head -5|grep -v PID| awk NR==$i;done
+
+replace : with ,
+======
+|sed 's/:/,/'
+
+replace space and special chars in file name by '_'
+=========
+find -maxdepth 1 -type f -name "* *" -exec bash -c 'mv "$0" "${0//[ \\#()&@$:]/_}"' {} \;
