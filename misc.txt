@@ -53,6 +53,13 @@ ps -eo pid,ppid,user,%mem,%cpu,command --sort=-%mem |head -5|grep -v PID| awk 'N
 
 for (( i=1;i<=4;i++ ));do ps -eo pid,ppid,user,%mem,%cpu,command --sort=-%mem |head -5|grep -v PID| awk NR==$i;done
 
+OR
+--
+ps -eo pid,ppid,user,%mem,%cpu,command --sort=-%mem |head -5|grep -v PID| sed -n '1,1p'
+ps -eo pid,ppid,user,%mem,%cpu,command --sort=-%mem |head -5|grep -v PID| sed -n '2,2p'
+ps -eo pid,ppid,user,%mem,%cpu,command --sort=-%mem |head -5|grep -v PID| sed -n '3,3p'
+ps -eo pid,ppid,user,%mem,%cpu,command --sort=-%mem |head -5|grep -v PID| sed -n '4,4p'
+
 replace : with ,
 ======
 |sed 's/:/,/'
