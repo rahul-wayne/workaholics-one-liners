@@ -67,3 +67,11 @@ replace : with ,
 replace space and special chars in file name by '_'
 =========
 find -maxdepth 1 -type f -name "* *" -exec bash -c 'mv "$0" "${0//[ \\#()&@$:]/_}"' {} \;
+
+
+
+--------
+
+for filename in `ls`;do new=$(echo $filename| sed 's/_\[720p\]_Web-DL_\[Vip\]//');mv -v $filename $new;done
+
+renamed 'From_S02E01_[720p]_Web-DL_[Vip].mp4' -> 'From_S02E01.mp4'
